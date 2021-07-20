@@ -1,21 +1,38 @@
 let root = document.querySelector(".root");
 
-quotes.forEach((elem) => {
-  let li = document.createElement("li");
-  let p = document.createElement("p");
-  p.style.fontSize = "2rem";
-  p.innerText = elem.quoteText;
-  let cite = document.createElement("cite");
-  cite.style.fontSize = "1rem";
-  if (elem.quoteAuthor == "") {
-    cite.innerText = `- Unknown`;
-  } else {
-    cite.innerText = `- ${elem.quoteAuthor}`;
+let max = 5;
+let index = 0;
+function addQuote() {
+  for (let i = 0; i < max; i++) {
+    let li = document.createElement("li");
+    let bq = document.createElement("blockquote");
+    bq.style.fontSize = "2.35rem";
+    bq.innerText = quotes[index].quoteText;
+    let cite = document.createElement("cite");
+    cite.style.fontSize = "1rem";
+    if (quotes[index].quoteAuthor === "") {
+      cite.innerText = `- Unknown`;
+    } else {
+      cite.innerText = `- ${quotes[index].quoteAuthor}`;
+    }
+
+    li.append(bq, cite);
+    root.append(li);
+    index++;
   }
-  li.append(p, cite);
-  root.append(li);
-});
+}
+addQuote();
 
 window.addEventListener("DOMContentLoaded", () => {
   alert(`The Content Of DOM is Loaded.`);
+});
+
+document.addEventListener("scroll", () => {
+  let scrollTop = document.documentElement.scrollTop;
+  let scrollHeight = document.documentElement.scrollHeight;
+  let clientHeight = document.documentElement.clientHeight;
+
+  if (scrollTop + clientHeight >= scrollHeight && index < quotes.length) {
+    addQuote();
+  }
 });
