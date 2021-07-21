@@ -141,13 +141,13 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: rgb(46, 45, 45);
   font-size: 1.125rem;
   font-family: "Open Sans", sans-serif;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 600px;
   width: 100%;
   margin: 2rem auto;
 }
@@ -164,6 +164,7 @@ h1 {
 }
 
 canvas {
-  width: 100%;
-  background-color: #fff;
+  background:#628395;
+  display: block;
+  margin: 1rem auto;
 }
