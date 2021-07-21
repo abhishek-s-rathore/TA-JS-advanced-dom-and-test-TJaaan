@@ -8,6 +8,7 @@ let dragSrcEl = null;
 function handleDragStart(event) {
   this.style.opacity = "0.4";
   dragSrcEl = this;
+  // console.log(event.dataTransfer.effectAllowed);
   event.dataTransfer.effectAllowed = "move";
   event.dataTransfer.setData("text/html", this.innerHTML);
 }
@@ -16,6 +17,7 @@ function handleDragOver(e) {
   if (e.preventDefault) {
     e.preventDefault();
   }
+
   e.dataTransfer.dropEffect = "move";
   return false;
 }
@@ -24,10 +26,12 @@ function handleDrop(event) {
   if (event.stopPropagation) {
     event.stopPropagation();
   }
+
   if (dragSrcEl != this) {
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = event.dataTransfer.getData("text/html");
   }
+
   return false;
 }
 
