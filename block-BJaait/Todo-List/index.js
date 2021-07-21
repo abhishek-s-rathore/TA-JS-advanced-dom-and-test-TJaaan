@@ -8,7 +8,6 @@ let dragSrcEl = null;
 function handleDragStart(event) {
   this.style.opacity = "0.4";
   dragSrcEl = this;
-  // console.log(event.dataTransfer.effectAllowed);
   event.dataTransfer.effectAllowed = "move";
   event.dataTransfer.setData("text/html", this.innerHTML);
 }
