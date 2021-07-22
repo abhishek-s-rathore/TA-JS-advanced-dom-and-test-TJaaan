@@ -4,9 +4,12 @@
   "description": "",
   "main": "calculator.js",
   "scripts": {
-    "test": "test --watchAll --coverage"
+    "test": "jest --watchAll --coverage"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
 }
