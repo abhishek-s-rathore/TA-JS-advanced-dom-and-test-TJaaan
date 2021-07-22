@@ -29,9 +29,8 @@ function handleDrop(event) {
   if (dragSrcEl != this) {
     dragSrcEl.innerHTML = this.innerHTML;
     this.innerHTML = event.dataTransfer.getData('text/html');
-  //  var data = event.dataTransfer.getData('text/html');
-  //  event.target.appendChild(document.getElementById(data));
-
+    //  var data = event.dataTransfer.getData('text/html');
+    //  event.target.appendChild(document.getElementById(data));
   }
   return false;
 }
