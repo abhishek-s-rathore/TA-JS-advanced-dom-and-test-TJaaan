@@ -49,6 +49,7 @@ Find the difference between the following 2 dates:
 
 - Check is `2020-01-01` date after `2018-01-01`
 - Check is `2010-01-01` date after `2018-01-01`
+
 - Check if the year `2019` is a leap year
 - Check if the year `2020` is a leap year
 
